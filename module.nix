@@ -26,7 +26,7 @@ in {
     (mkIf cfg.enable {
       system.activationScripts.postActivation.text =
         ''
-          echo "setting up custom icons..."
+          echo -e "\033[1;36mActivating customIcons\033[0m"
         ''
         + (
           builtins.concatStringsSep "\n\n" (
