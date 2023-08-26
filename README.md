@@ -14,6 +14,18 @@ Add this repository to your flake's inputs:
 }
 ```
 
+Add the module provided by the flake:
+
+```nix
+{
+  darwinConfigurations.some-mac-device = nix-darwin.lib.darwinSystem {
+      modules = [
+        darwin-custom-icons.darwinModules.default
+      ];
+  };
+}
+```
+
 And then in your system configuration:
 
 ```nix
