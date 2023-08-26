@@ -30,11 +30,14 @@ And then in your system configuration:
 
 ```nix
 {
-  environment.customIcons = [
-    {
-      path = "/Applications/Notion.app";
-      icon = ./icons/notion.icns;
-    }
-  ];
+  environment.customIcons = {
+    enable = true;
+    icons = [
+      {
+        path = "/Applications/Notion.app";
+        icon = ./icons/notion.icns;
+      }
+    ];
+  };
 }
 ```
