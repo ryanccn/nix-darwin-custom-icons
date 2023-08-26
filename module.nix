@@ -7,7 +7,7 @@
   inherit (lib) mkEnableOption mkIf mkMerge mkOption types;
 in {
   options.environment.customIcons = {
-    enable = mkEnableOption "customIcons";
+    enable = mkEnableOption "environment.customIcons";
     icons = mkOption {
       type = types.listOf (types.submodule {
         options = {
