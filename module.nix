@@ -22,8 +22,8 @@ in {
     };
   };
 
-  config = mkIf cfg.enable (mkMerge [
-    {
+  config = mkMerge [
+    (mkIf cfg.enable {
       system.activationScripts.postActivation.text =
         ''
           echo "setting up custom icons..."
@@ -47,6 +47,6 @@ in {
             cfg.icons
           )
         );
-    }
-  ]);
+    })
+  ];
 }
